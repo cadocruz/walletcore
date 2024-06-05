@@ -30,7 +30,7 @@ func NewCreateClientUseCase(gateway gateway.ClientGateway) *CreateClientUseCase 
 	}
 }
 
-func (uc *CreateClientUseCase) Execute(input *CreateClientInputDTO) (*CreateClientOutputDTO, error) {
+func (uc *CreateClientUseCase) Execute(input CreateClientInputDTO) (*CreateClientOutputDTO, error) {
 	client, err := entity.NewClient(input.Name, input.Email)
 	if err != nil {
 		return nil, err
